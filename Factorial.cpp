@@ -1,18 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int factorial(int n) {
-    int result = 1;
-    for(int i = 1; i <= n; i++) {
-        result *= i;
+int f( int n )
+{
+    if( n == 0 ) return 1;
+    else {
+        return n *f(n-1);
     }
-    return result;
+}
+int Fibonacci( int n )
+{
+    if( n == 0 ) return 0;
+    if( n == 1 ) return 1;
+    return Fibonacci(n-1) + Fibonacci(n-2);
 }
 
-int main() {
-    int n;
-    cout << "Enter a number: ";
-    cin >> n;
-    cout << "Factorial: " << factorial(n) << endl;
-    return 0;
+int main()
+{
+    int n; cin >> n;
+    cout << "Factorial: " << f(n) << endl;
+    cout << "Fibonacci: " << Fibonacci(n) << endl;
 }
